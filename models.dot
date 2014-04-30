@@ -1,0 +1,13 @@
+digraph models_diagram {
+	graph[overlap=false, splines=true]
+	"Channel" [shape=Mrecord, label="{Channel|id :integer\lname :string\limage_url :string\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Term" [shape=Mrecord, label="{Term|id :integer\lidentifier :string\l}"]
+	"Program" [shape=Mrecord, label="{Program|id :integer\lname :string\limage_url :string\lidentifier :string\lcreated_at :datetime\lupdated_at :datetime\lchannel_id :integer\l}"]
+	"Actor" [shape=Mrecord, label="{Actor|id :integer\lidentifier :string\lname :string\l}"]
+	"Genre" [shape=Mrecord, label="{Genre|id :integer\lidentifier :string\l}"]
+	"Term" -> "Program" [arrowtail=crow, arrowhead=crow, dir=both color="#C2418E"]
+	"Program" -> "Tod" [arrowtail=crow, arrowhead=crow, dir=both color="#9BBF3A"]
+	"Program" -> "Genre" [arrowtail=crow, arrowhead=crow, dir=both color="#187792"]
+	"Program" -> "Entity" [arrowtail=crow, arrowhead=crow, dir=both color="#7A3FFC"]
+	"Program" -> "Actor" [arrowtail=crow, arrowhead=crow, dir=both color="#FA1D58"]
+}
